@@ -28,4 +28,24 @@ class ClientesController extends Controller
 
         $cliente->save();
     }
+
+    public function update(Request $request)
+    {
+        $cliente = clientes::find($request->id);
+ 
+        $cliente->nombre = $request->Nombre;
+        
+        $cliente->direccion = $request->Direccion;
+        
+        $cliente->telefono = $request->Telefono;
+        
+        $cliente->correo_electronico = $request->Correo;
+
+        $cliente->ciudad = $request->Ciudad;
+
+        $cliente->region = $request->Region;
+
+        $cliente->save();
+
+    }
 }

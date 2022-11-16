@@ -28,4 +28,26 @@ class OrdenesController extends Controller
     
             $orden->save();
         }
+
+        public function update(Request $request)
+        {
+            $orden = ordenes::find($request->id);
+     
+            $orden->fecha_orden = $request->Fecha_orden;
+            
+            $orden->fecha_envio = $request->Fecha_envio;
+            
+            $orden->nombre_ciudad = $request->Nombre_ciudad;
+            
+            $orden->nombre_region = $request->Nombre_region;
+    
+            $orden->valor_total_orden = $request->Valor_total_orden;
+            
+            $orden->cliente_id = $request->Id_cliente;
+
+            $orden->producto_id = $request->Id_producto;
+    
+            $orden->save();
+    
+        }
 }

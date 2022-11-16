@@ -22,6 +22,21 @@ class DetalleOrdenesController extends Controller
 
         $detalle_orden->producto_id = $request->Id_producto;
 
+        $detalle_orden->save();
+    }
+    public function update(Request $request)
+    {
+        $detalle_orden = detalle_ordenes::find($request->id);
+    
+        $detalle_orden->precio_unidad = $request->Precio_unidad;
+        
+        $detalle_orden->cantidad = $request->Cantidad;
+        
+        $detalle_orden->descuento = $request->Descuento;
+        
+        $detalle_orden->orden_id = $request->Id_orden;
+
+        $detalle_orden->producto_id = $request->Id_producto;
 
         $detalle_orden->save();
     }

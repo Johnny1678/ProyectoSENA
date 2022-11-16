@@ -25,4 +25,21 @@ class ProveedoresController extends Controller
         $proveedor->save();
     }
 
+    
+    public function update(Request $request)
+    {
+        $proveedor = proveedores::find($request->id);
+ 
+        $proveedor->nombre = $request->Nombre;
+        
+        $proveedor->correo_electronico = $request->Correo;
+        
+        $proveedor->telefono = $request->Telefono;
+        
+        $proveedor->direccion = $request->Direccion;
+
+        $proveedor->save();
+
+    }
+
 }
