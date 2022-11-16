@@ -21,10 +21,22 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
+//Rutas de categorias
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::post('api/categorias/guardar', [App\Http\Controllers\CategoriasController::class, 'save']);
 
-Auth::routes();
+//Rutas de proveedores
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::post('api/proveedores/guardar', [App\Http\Controllers\ProveedoresController::class, 'save']);
+
+//Rutas de clientes
+Route::post('api/clientes/guardar', [App\Http\Controllers\ClientesController::class, 'save']);
+
+//Rutas de productos
+Route::post('api/productos/guardar', [App\Http\Controllers\ProductosController::class, 'save']);
+
+//Rutas ordenes
+Route::post('api/ordenes/guardar', [App\Http\Controllers\OrdenesController::class, 'save']);
+
+//Detalle_orden
+Route::post('api/detalle_ordenes/guardar', [App\Http\Controllers\DetalleOrdenesController::class, 'save']);
