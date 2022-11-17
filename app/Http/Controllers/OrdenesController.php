@@ -59,6 +59,13 @@ class OrdenesController extends Controller
         public function index(){
         
             $orden = ordenes::all();
-            return $orden;
+            $array=array(
+                'status'=>200,
+                'msj'=>'consulta exitosa'
+            );
+            return [
+                'data'=>$orden,
+                'response'=>$array
+            ];
         }
 }

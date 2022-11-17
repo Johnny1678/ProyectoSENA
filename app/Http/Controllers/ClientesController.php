@@ -58,7 +58,14 @@ class ClientesController extends Controller
     public function index(){
         
         $cliente = clientes::all();
-        return $cliente;
+        $array=array(
+            'status'=>200,
+            'msj'=>'consulta exitosa'
+        );
+        return [
+            'data'=>$cliente,
+            'response'=>$array
+        ];
     }
 
 }

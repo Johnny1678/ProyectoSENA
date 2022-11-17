@@ -51,7 +51,14 @@ class ProveedoresController extends Controller
     public function index(){
         
         $proveedor = proveedores::all();
-        return $proveedor;
+        $array=array(
+            'status'=>200,
+            'msj'=>'consulta exitosa'
+        );
+        return [
+            'data'=>$proveedor,
+            'response'=>$array
+        ];
     }
 
 

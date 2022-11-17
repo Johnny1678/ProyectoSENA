@@ -49,6 +49,13 @@ class DetalleOrdenesController extends Controller
     public function index(){
         
         $detalle_orden = detalle_ordenes::all();
-        return $detalle_orden;
+        $array=array(
+            'status'=>200,
+            'msj'=>'consulta exitosa'
+        );
+        return [
+            'data'=>$detalle_orden,
+            'response'=>$array
+        ];
     }
 }

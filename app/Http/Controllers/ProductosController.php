@@ -55,6 +55,13 @@ class ProductosController extends Controller
     public function index(){
         
         $producto = productos::all();
-        return $producto;
+        $array=array(
+            'status'=>200,
+            'msj'=>'consulta exitosa'
+        );
+        return [
+            'data'=>$producto,
+            'response'=>$array
+        ];
     }
 }

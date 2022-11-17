@@ -33,7 +33,14 @@ class CategoriasController extends Controller {
     public function index(){
         
         $categoria = categorias::all();
-        return $categoria;
+        $array=array(
+            'status'=>200,
+            'msj'=>'consulta exitosa'
+        );
+        return [
+            'data'=>$categoria,
+            'response'=>$array
+        ];
     }
 
 }
