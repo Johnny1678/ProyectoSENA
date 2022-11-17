@@ -48,6 +48,11 @@ class OrdenesController extends Controller
             $orden->producto_id = $request->Id_producto;
     
             $orden->save();
-    
+        }
+        public function delete(Request $request)
+        {
+            $orden = ordenes::find($request->id);
+            
+            $orden->delete();
         }
 }

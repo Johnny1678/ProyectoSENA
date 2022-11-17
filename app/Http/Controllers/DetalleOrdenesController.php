@@ -40,4 +40,10 @@ class DetalleOrdenesController extends Controller
 
         $detalle_orden->save();
     }
+    public function delete(Request $request)
+    {
+        $detalle_orden = detalle_ordenes::find($request->id);
+        
+        $detalle_orden->delete();
+    }
 }

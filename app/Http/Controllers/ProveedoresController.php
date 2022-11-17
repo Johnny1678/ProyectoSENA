@@ -41,5 +41,11 @@ class ProveedoresController extends Controller
         $proveedor->save();
 
     }
+    public function delete(Request $request)
+    {
+        $proveedor = proveedores::find($request->id);
+        
+        $proveedor->delete();
+    }
 
 }

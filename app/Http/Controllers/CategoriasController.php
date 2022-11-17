@@ -29,5 +29,12 @@ class CategoriasController extends Controller
         $categoria->save();
 
     }
+    public function delete(Request $request)
+    {
+        $categoria = categorias::find($request->id);
+        
+        $categoria->delete();
+
+    }
 
 }

@@ -48,4 +48,10 @@ class ClientesController extends Controller
         $cliente->save();
 
     }
+    public function delete(Request $request)
+    {
+        $cliente = clientes::find($request->id);
+        
+        $cliente->delete();
+    }
 }

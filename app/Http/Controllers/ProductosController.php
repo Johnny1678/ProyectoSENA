@@ -45,4 +45,10 @@ class ProductosController extends Controller
 
         $producto->save();
     }
+    public function delete(Request $request)
+    {
+        $producto = productos::find($request->id);
+        
+        $producto->delete();
+    }
 }
