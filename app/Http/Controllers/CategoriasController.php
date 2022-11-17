@@ -5,14 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\categorias;
 
-class CategoriasController extends Controller
+class CategoriasController extends Controller {
 
-{
-    //
-    public function save(Request $request)
-    {
-        // Validate the request...
- 
+    public function save(Request $request)  {
         $categoria = new categorias;
   
         $categoria->nombre_categoria = $request->Categoria;
@@ -20,8 +15,7 @@ class CategoriasController extends Controller
         $categoria->save();
     }
 
-    public function update(Request $request)
-    {
+    public function update(Request $request) {
         $categoria = categorias::find($request->id);
  
         $categoria->nombre_categoria = $request->Categoria;
@@ -29,12 +23,17 @@ class CategoriasController extends Controller
         $categoria->save();
 
     }
-    public function delete(Request $request)
-    {
+
+    public function delete(Request $request){
         $categoria = categorias::find($request->id);
         
         $categoria->delete();
+    }
 
+    public function index(){
+        
+        $categoria = categorias::all();
+        return $categoria;
     }
 
 }

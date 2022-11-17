@@ -51,4 +51,10 @@ class ProductosController extends Controller
         
         $producto->delete();
     }
+    
+    public function index(){
+        
+        $producto = productos::all();
+        return $producto;
+    }
 }

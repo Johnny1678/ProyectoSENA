@@ -54,4 +54,11 @@ class ClientesController extends Controller
         
         $cliente->delete();
     }
+
+    public function index(){
+        
+        $cliente = clientes::all();
+        return $cliente;
+    }
+
 }

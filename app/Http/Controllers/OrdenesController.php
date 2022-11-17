@@ -55,4 +55,10 @@ class OrdenesController extends Controller
             
             $orden->delete();
         }
+
+        public function index(){
+        
+            $orden = ordenes::all();
+            return $orden;
+        }
 }

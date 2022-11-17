@@ -46,4 +46,9 @@ class DetalleOrdenesController extends Controller
         
         $detalle_orden->delete();
     }
+    public function index(){
+        
+        $detalle_orden = detalle_ordenes::all();
+        return $detalle_orden;
+    }
 }

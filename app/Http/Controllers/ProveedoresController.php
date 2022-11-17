@@ -48,4 +48,11 @@ class ProveedoresController extends Controller
         $proveedor->delete();
     }
 
+    public function index(){
+        
+        $proveedor = proveedores::all();
+        return $proveedor;
+    }
+
+
 }
