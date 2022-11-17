@@ -58,4 +58,9 @@ class DetalleOrdenesController extends Controller
             'response'=>$array
         ];
     }
+    public function getSelect(){
+        
+        $detalle_orden = detalle_ordenes::select('id', 'precio_unidad', 'cantidad', 'descuento')->get();
+        return ['data'=>$detalle_orden];
+    }
 }

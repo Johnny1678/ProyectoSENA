@@ -42,5 +42,12 @@ class CategoriasController extends Controller {
             'response'=>$array
         ];
     }
+    public function getSelect(){
+        
+        $categoria = categorias::select('id', 'nombre_categoria')->get();
+        return ['data'=>$categoria];
+    }
+
+    
 
 }

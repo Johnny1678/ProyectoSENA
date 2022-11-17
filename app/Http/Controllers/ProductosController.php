@@ -64,4 +64,10 @@ class ProductosController extends Controller
             'response'=>$array
         ];
     }
+    public function getSelect(){
+        
+        $producto = productos::select('id', 'nombre', 'precio_unidad', 'stock',
+        'unidades_en_orden',)->get();
+        return ['data'=>$producto];
+    }
 }

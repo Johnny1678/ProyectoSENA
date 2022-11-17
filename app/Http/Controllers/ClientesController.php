@@ -67,5 +67,10 @@ class ClientesController extends Controller
             'response'=>$array
         ];
     }
+    public function getSelect(){
+        
+        $cliente = clientes::select('id', 'nombre')->get();
+        return ['data'=>$cliente];
+    }
 
 }

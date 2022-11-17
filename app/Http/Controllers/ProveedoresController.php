@@ -61,5 +61,11 @@ class ProveedoresController extends Controller
         ];
     }
 
+    public function getSelect(){
+        
+        $proveedor = proveedores::select('id', 'nombre', 'correo_electronico', 'telefono', 'direccion')->get();
+        return ['data'=>$proveedor];
+    }
+
 
 }

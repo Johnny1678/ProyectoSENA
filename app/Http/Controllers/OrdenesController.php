@@ -68,4 +68,9 @@ class OrdenesController extends Controller
                 'response'=>$array
             ];
         }
+        public function getSelect(){
+        
+            $orden = ordenes::select('id', 'nombre_ciudad', 'nombre_region', 'valor_total_orden')->get();
+            return ['data'=>$orden];
+        }
 }
